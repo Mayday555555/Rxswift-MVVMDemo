@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '10.0'
+
+inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
+target 'Rxswift+MVVM' do
+  use_frameworks!
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SnapKit'
+  pod 'SwiftyJSON'
+  pod 'Moya/RxSwift'
+  pod 'RxDataSources'
+  pod 'Alamofire'
+end
