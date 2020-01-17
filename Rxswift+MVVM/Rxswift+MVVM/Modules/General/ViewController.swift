@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func jumpToNewViewController(_ sender: Any) {
+        let newsVC = NewsViewController()
+        newsVC.modalPresentationStyle = .fullScreen
+        self.present(newsVC, animated: true, completion: nil)
+    }
+    
 }
 
