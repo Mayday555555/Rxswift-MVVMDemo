@@ -20,7 +20,7 @@
                                 <rect key="frame" x="161" y="438" width="92" height="30"/>
                                 <state key="normal" title="跳转新闻界面"/>
                                 <connections>
-                                    <action selector="jumpToNewViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9EX-cG-kCU"/>
+                                    <segue destination="UgN-g2-krB" kind="presentation" id="j3y-6P-BS2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,6 +35,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="136"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="dwi-BZ-ArZ">
+            <objects>
+                <viewController storyboardIdentifier="News" modalPresentationStyle="fullScreen" id="UgN-g2-krB" customClass="NewsViewController" customModule="Rxswift_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0RX-il-Hs6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdr-vE-I83">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vds-o4-pSE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBq-zA-aOm">
+                                        <rect key="frame" x="334" y="7" width="53" height="30"/>
+                                        <state key="normal" title="Refresh"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QBq-zA-aOm" secondAttribute="trailing" constant="27" id="TZa-gY-9j1"/>
+                                    <constraint firstItem="QBq-zA-aOm" firstAttribute="centerY" secondItem="Vds-o4-pSE" secondAttribute="centerY" id="iak-il-iTF"/>
+                                    <constraint firstAttribute="height" constant="44" id="y9A-VW-eqj"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-gC-cWm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ARB-92-3wQ" firstAttribute="trailing" secondItem="Vds-o4-pSE" secondAttribute="trailing" id="0rp-eW-PVs"/>
+                            <constraint firstItem="Vds-o4-pSE" firstAttribute="top" secondItem="zdr-vE-I83" secondAttribute="bottom" id="5QM-Wg-0FG"/>
+                            <constraint firstItem="ARB-92-3wQ" firstAttribute="trailing" secondItem="JRv-gC-cWm" secondAttribute="trailing" id="AxN-kE-28U"/>
+                            <constraint firstItem="zdr-vE-I83" firstAttribute="top" secondItem="0RX-il-Hs6" secondAttribute="top" id="KhF-cC-KYC"/>
+                            <constraint firstAttribute="trailing" secondItem="zdr-vE-I83" secondAttribute="trailing" id="Ucf-HR-4Qh"/>
+                            <constraint firstItem="JRv-gC-cWm" firstAttribute="top" secondItem="Vds-o4-pSE" secondAttribute="bottom" id="X9o-Hb-OU2"/>
+                            <constraint firstItem="zdr-vE-I83" firstAttribute="leading" secondItem="0RX-il-Hs6" secondAttribute="leading" id="XCc-Eh-sA1"/>
+                            <constraint firstItem="Vds-o4-pSE" firstAttribute="top" secondItem="ARB-92-3wQ" secondAttribute="top" id="Z5r-MF-ur4"/>
+                            <constraint firstItem="JRv-gC-cWm" firstAttribute="leading" secondItem="ARB-92-3wQ" secondAttribute="leading" id="bBj-PV-rvd"/>
+                            <constraint firstAttribute="bottom" secondItem="JRv-gC-cWm" secondAttribute="bottom" id="i6t-gc-fZV"/>
+                            <constraint firstItem="Vds-o4-pSE" firstAttribute="leading" secondItem="ARB-92-3wQ" secondAttribute="leading" id="taj-RT-aCG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ARB-92-3wQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnRefresh" destination="QBq-zA-aOm" id="lAt-ET-oFw"/>
+                        <outlet property="tableView" destination="JRv-gC-cWm" id="dip-46-Hkw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doV-53-Nnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="896.65178571428567"/>
         </scene>
     </scenes>
 </document>

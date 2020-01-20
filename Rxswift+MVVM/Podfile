@@ -12,4 +12,5 @@ target 'Rxswift+MVVM' do
   pod 'Moya/RxSwift'
   pod 'RxDataSources'
   pod 'Alamofire'
+  pod 'Kingfisher'
 end
